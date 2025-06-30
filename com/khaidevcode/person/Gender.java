@@ -1,4 +1,4 @@
-package com.khaidevcode;
+package com.khaidevcode.person;
 
 public enum Gender {
         MALE,

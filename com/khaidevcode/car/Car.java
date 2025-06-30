@@ -1,4 +1,4 @@
-package com.khaidevcode;
+package com.khaidevcode.car;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

@@ -1,4 +1,6 @@
-package com.khaidevcode;
+package com.khaidevcode.person;
+
+import com.khaidevcode.cat.Cat;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -21,6 +23,7 @@ public class Person {
     {
         System.out.println("instance initializer");
         count++;
+
     }
 
     public Person() {

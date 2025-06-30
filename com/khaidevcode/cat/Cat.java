@@ -1,4 +1,4 @@
-package com.khaidevcode;
+package com.khaidevcode.cat;
 
 import java.util.Objects;
 

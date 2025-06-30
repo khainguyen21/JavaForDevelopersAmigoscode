@@ -1,9 +1,10 @@
 package com.khaidevcode;
 
-import java.util.Arrays;
+import com.khaidevcode.person.Person;
+
+import static java.lang.Math.*;
 
 public class Main {
-
     public static void main(String[] args) {
 
 //        Cat rose = new Cat("Rose", 2, "purple");
@@ -34,5 +35,11 @@ public class Main {
         new Person();
         new Person();
         System.out.println(Person.count);
+        System.out.println(max(10, 20));
+
+        AccessExample.myStaticMethod();
+
+        System.out.println();
+
     }
 }
