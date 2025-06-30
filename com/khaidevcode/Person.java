@@ -6,6 +6,7 @@ import java.util.Objects;
 public class Person {
 
     public static int count;
+
     static {
         System.out.println("start: static initialization");
         count = 0;
@@ -17,22 +18,27 @@ public class Person {
     private Gender gender;
     private Cat[] cat;
 
+    {
+        System.out.println("instance initializer");
+        count++;
+    }
+
     public Person() {
         System.out.println("Default Constructor");
     }
+
+
     public Person(String firstName, String lastName, Gender gender, Cat[] cat) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.cat = cat;
-        count++;
     }
 
     public Person(String firstName, String lastName, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
-        count++;
     }
 
     public String getFirstName() {

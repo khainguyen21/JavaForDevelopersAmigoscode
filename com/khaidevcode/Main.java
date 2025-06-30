@@ -4,18 +4,6 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static Person[] PEOPLE;
-
-    static {
-        System.out.println("static initializer in main");
-        PEOPLE = new Person[10];
-
-        // business logic
-        for (int i = 0; i < PEOPLE.length; i++) {
-
-        }
-    }
-
     public static void main(String[] args) {
 
 //        Cat rose = new Cat("Rose", 2, "purple");
@@ -44,5 +32,7 @@ public class Main {
 //        System.out.println(Alex1);
 
         new Person();
+        new Person();
+        System.out.println(Person.count);
     }
 }
