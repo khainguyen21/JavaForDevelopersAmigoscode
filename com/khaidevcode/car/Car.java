@@ -12,6 +12,11 @@ public class Car implements Serializable {
 
     }
 
+    public Car(String regNumber, BigDecimal price) {
+        this.regNumber = regNumber;
+        this.price = price;
+    }
+
     public String getRegNumber() {
         return regNumber;
     }
@@ -26,5 +31,13 @@ public class Car implements Serializable {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "regNumber='" + regNumber + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

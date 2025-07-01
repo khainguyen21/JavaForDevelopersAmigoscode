@@ -1,8 +1,11 @@
 package com.khaidevcode;
 
-import com.khaidevcode.person.Person;
+import com.khaidevcode.car.Car;
+import com.khaidevcode.car.CarDAO;
+import com.khaidevcode.car.CarService;
 
-import static java.lang.Math.*;
+import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,15 +34,19 @@ public class Main {
 //
 //        System.out.println(Alex);
 //        System.out.println(Alex1);
+//        new Person();
+//        new Person();
+//        System.out.println(Person.count);
+//        System.out.println(max(10, 20));
+//
+//        AccessExample.myStaticMethod();
+//
+//        System.out.println();
+        Car car = new Car("1234", BigDecimal.valueOf(10));
+        CarDAO carDAO = new CarDAO();
+        CarService carService = new CarService(carDAO);
 
-        new Person();
-        new Person();
-        System.out.println(Person.count);
-        System.out.println(max(10, 20));
-
-        AccessExample.myStaticMethod();
-
-        System.out.println();
-
+        carService.registerNewCar(car);
+        System.out.println(Arrays.toString(carService.getCars()));
     }
 }
