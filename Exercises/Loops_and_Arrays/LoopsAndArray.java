@@ -111,14 +111,65 @@ public class LoopsAndArray {
         // print our resulting array
         System.out.println(Arrays.toString(words));
 
+        String[] words1 = {"i", "sure", "do", "love", "bees"};
+
         // create a for loop which goes through each string in our array
+        for (int i = 0; i < words1.length; i++) {
 
-        // grab the first letter of our word
-        // capitalise the first letter
-        // add the capitalised letter to the rest of the provided word
-        // assign the value to an array
-        // print our resulting array
+            String firstChar = words1[i].substring(0,1).toUpperCase();
+            words1[i] = firstChar + words1[i].substring(1);
+        }
 
+        System.out.println(Arrays.toString(words1));
 
+    /*
+        Write a program that reverses an array of Strings
+        String[] content = {"you", "are", "how", "hello"}
+        Tip. Use for loop and you to start at highest index.
+        Output should be: hello how are you?. Note question mark at the end
+    */
+
+        String[] content = {"you", "are", "how", "hello"};
+
+        for (int i = content.length - 1; i >= 0; i--) {
+            System.out.print(content[i]);
+
+            if (i != 0) {
+                System.out.print(" ");
+            }
+        }
+        System.out.print("?");
+
+        System.out.println();
+       /*
+        Write a program that adds total amount for this string "0.90, 1.00, 9.00, 8.78, 0.01".
+
+        Tip:
+        - String input = "0.90, 1.00, 9.00, 8.78, 0.01";
+        - create variable to store result. double result = 0;
+        - convert string to array by using the String[] numbers = input.split(", ")
+        - then loop.
+        - convert each string to decimal and add to current result
+            - use Double.parseDouble(string) to convert a string to double
+        */
+
+        String number = "0.90, 1.00, 9.00, 8.78, 0.01";
+        String[] numbers = number.split(",");
+        System.out.println(Arrays.toString(numbers));
+
+        double total = 0;
+        for (String num : numbers) {
+            total += Double.parseDouble(num);
+        }
+
+        System.out.println("Total: " + total);
+
+        System.out.println(Arrays.toString(args));
+        for (String str : args) {
+            System.out.println(str);
+        }
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Argument " + (i + 1) + ": " + args[i]);
+        }
     }
 }
