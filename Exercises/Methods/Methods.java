@@ -17,6 +17,15 @@ public class Methods {
         String capitalizedString = capitalizeFirstLetter(inputString);
         System.out.println(capitalizedString);
 
+        String[] names = {"Alice", "Bob", "Charlie", "David"};
+        int size = getArraySize(names);
+        System.out.println("Number of items in the array: " + size);
+
+        String sentence = "Hello, this is a sample sentence.";
+
+        int wordCount = countWordsInSentence(sentence);
+        System.out.println("The sentence contains " + wordCount + " words.");
+
     }
 
     public static int sum(int firstNum, int secondNum) {
@@ -48,5 +57,23 @@ public class Methods {
             splitStr[i] = splitStr[i].substring(0, 1).toUpperCase() + splitStr[i].substring(1);
         }
         return String.join(" ", splitStr);
+    }
+
+
+    public static int getArraySize(String[] arr) {
+        return arr.length;
+    }
+
+
+    public static int countWordsInSentence(String sentence) {
+
+        if (sentence == null || sentence.isEmpty()) {
+            return 0;
+        }
+
+        String[] arrayStr = sentence.split(" ");
+        System.out.println(Arrays.toString(arrayStr));
+
+        return arrayStr.length;
     }
 }
