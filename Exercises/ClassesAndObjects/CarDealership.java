@@ -7,6 +7,7 @@ public class CarDealership {
     private String name;
     private int maxCarsOnDisplay;
     private ArrayList<Car> allCarsInStock; // Using an array to represent cars in stock
+    private int totalCurrentCars;
 
     // Constructor
 
@@ -44,6 +45,16 @@ public class CarDealership {
 
     public void addCarToStock(Car car) {
         allCarsInStock.add(car);
+    }
+
+    public int totalCarsInDealership () {
+        for (Car car : allCarsInStock) {
+            if (car != null) {
+                totalCurrentCars++;
+            }
+        }
+
+        return totalCurrentCars;
     }
 
     @Override
