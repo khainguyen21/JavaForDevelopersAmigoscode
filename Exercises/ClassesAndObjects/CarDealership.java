@@ -47,6 +47,10 @@ public class CarDealership {
         allCarsInStock.add(car);
     }
 
+    public void removeCarFromStock(Car car) {
+        allCarsInStock.remove(car);
+    }
+
     public int totalCarsInDealership () {
         for (Car car : allCarsInStock) {
             if (car != null) {

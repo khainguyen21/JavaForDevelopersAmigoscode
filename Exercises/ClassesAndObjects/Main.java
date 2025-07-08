@@ -38,12 +38,24 @@ public class Main {
         CarDealership dealership = new CarDealership("XYZ Auto", 5);
 
         // Adding cars to the dealership's stock
-        dealership.addCarToStock(new Car("Toyota", BigDecimal.valueOf(25000.0), EngineType.PETROL));
-        dealership.addCarToStock(new Car("Tesla", BigDecimal.valueOf(75000.0), EngineType.ELECTRIC));
-        dealership.addCarToStock(new Car("Honda", BigDecimal.valueOf(28000.0), EngineType.HYBRID));
-        dealership.addCarToStock(new Car("Ford", BigDecimal.valueOf(32000.0), EngineType.DIESEL));
-        dealership.addCarToStock(new Car("Nissan", BigDecimal.valueOf(22000.0), EngineType.PETROL));
-        dealership.addCarToStock(new Car("Chevrolet", BigDecimal.valueOf(30000.0), EngineType.HYBRID));
+
+        Car toyota = new Car("Toyota", BigDecimal.valueOf(25000.0), EngineType.PETROL);
+        dealership.addCarToStock(toyota);
+
+        Car tesla = new Car("Tesla", BigDecimal.valueOf(75000.0), EngineType.ELECTRIC);
+        dealership.addCarToStock(tesla);
+
+        Car honda = new Car("Honda", BigDecimal.valueOf(28000.0), EngineType.HYBRID);
+        dealership.addCarToStock(honda);
+
+        Car ford = new Car("Ford", BigDecimal.valueOf(32000.0), EngineType.DIESEL);
+        dealership.addCarToStock(ford);
+
+        Car nissan = new Car("Nissan", BigDecimal.valueOf(22000.0), EngineType.PETROL);
+        dealership.addCarToStock(nissan);
+
+        Car chevrolet = new Car("Chevrolet", BigDecimal.valueOf(30000.0), EngineType.HYBRID);
+        dealership.addCarToStock(chevrolet);
 
         System.out.println("\nCars currently in stock at " + dealership.getName() + ": ");
         List<Car> carsInStock = dealership.getAllCarsInStock();
@@ -54,6 +66,9 @@ public class Main {
             }
         }
 
+        dealership.removeCarFromStock(toyota);
+
+        System.out.println(dealership);
         System.out.println(dealership.totalCarsInDealership());
 
     }
