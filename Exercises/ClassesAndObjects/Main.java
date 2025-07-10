@@ -66,10 +66,11 @@ public class Main {
             }
         }
 
-        dealership.removeCarFromStock(toyota);
-
-        System.out.println(dealership);
         System.out.println(dealership.totalCarsInDealership());
+        dealership.removeCarFromStock("Toyota");
+        System.out.println(dealership.totalCarsInDealership());
+
+//        System.out.println(dealership.findCarByManufacturer("Nissan"));
 
     }
 }

@@ -47,11 +47,13 @@ public class CarDealership {
         allCarsInStock.add(car);
     }
 
-    public void removeCarFromStock(Car car) {
-        allCarsInStock.remove(car);
+    public void removeCarFromStock(String manufacture) {
+        allCarsInStock.removeIf(car -> car != null && car.getManufacturer().equalsIgnoreCase(manufacture)
+        );
     }
 
     public int totalCarsInDealership () {
+        totalCurrentCars = 0;
         for (Car car : allCarsInStock) {
             if (car != null) {
                 totalCurrentCars++;
@@ -61,6 +63,15 @@ public class CarDealership {
         return totalCurrentCars;
     }
 
+    public Car findCarByManufacturer(String manufacturer) {
+        for (Car car : allCarsInStock) {
+            if (car.getManufacturer().equalsIgnoreCase(manufacturer)) {
+                return car;
+            }
+        }
+
+        return null;
+    }
     @Override
     public String toString() {
         return "CarDealership{" +
