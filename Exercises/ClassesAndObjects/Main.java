@@ -77,7 +77,7 @@ public class Main {
         // Remove Nissan
         dealership.removeCarFromStock(nissan);
 
-        // Find nissan car
+        // Find Nissan car
         System.out.println(dealership.findCarByManufacturer("Nissan"));
 
     }
