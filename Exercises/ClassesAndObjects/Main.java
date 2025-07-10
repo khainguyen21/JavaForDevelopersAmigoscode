@@ -1,6 +1,7 @@
 package Exercises.ClassesAndObjects;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -38,7 +39,6 @@ public class Main {
         CarDealership dealership = new CarDealership("XYZ Auto", 5);
 
         // Adding cars to the dealership's stock
-
         Car toyota = new Car("Toyota", BigDecimal.valueOf(25000.0), EngineType.PETROL);
         dealership.addCarToStock(toyota);
 
@@ -57,20 +57,28 @@ public class Main {
         Car chevrolet = new Car("Chevrolet", BigDecimal.valueOf(30000.0), EngineType.HYBRID);
         dealership.addCarToStock(chevrolet);
 
+        // Display all cars in the dealership
         System.out.println("\nCars currently in stock at " + dealership.getName() + ": ");
-        List<Car> carsInStock = dealership.getAllCarsInStock();
-
+        ArrayList<Car> carsInStock = dealership.getAllCarsInStock();
+        // Iterate through the Array list of all cars in the dealer
         for (Car car : carsInStock) {
             if (car != null) {
                 System.out.println(car);
             }
         }
 
-        System.out.println(dealership.totalCarsInDealership());
-        dealership.removeCarFromStock("Toyota");
+        // Display the total of cars in the dealership
         System.out.println(dealership.totalCarsInDealership());
 
-//        System.out.println(dealership.findCarByManufacturer("Nissan"));
+        // Remove Toyota
+        dealership.removeCarFromStock(toyota);
+        System.out.println(dealership.totalCarsInDealership());
+
+        // Remove Nissan
+        dealership.removeCarFromStock(nissan);
+
+        // Find nissan car
+        System.out.println(dealership.findCarByManufacturer("Nissan"));
 
     }
 }

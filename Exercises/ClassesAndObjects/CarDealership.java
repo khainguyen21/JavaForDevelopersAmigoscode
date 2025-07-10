@@ -1,6 +1,7 @@
 package Exercises.ClassesAndObjects;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CarDealership {
@@ -39,7 +40,7 @@ public class CarDealership {
         this.maxCarsOnDisplay = maxCarsOnDisplay;
     }
 
-    public List<Car> getAllCarsInStock() {
+    public ArrayList<Car> getAllCarsInStock() {
         return allCarsInStock;
     }
 
@@ -47,9 +48,8 @@ public class CarDealership {
         allCarsInStock.add(car);
     }
 
-    public void removeCarFromStock(String manufacture) {
-        allCarsInStock.removeIf(car -> car != null && car.getManufacturer().equalsIgnoreCase(manufacture)
-        );
+    public void removeCarFromStock(Car car) {
+        allCarsInStock.remove(car);
     }
 
     public int totalCarsInDealership () {
